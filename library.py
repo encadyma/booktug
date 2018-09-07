@@ -20,6 +20,7 @@ delay.until(lambda driver: driver.current_url != "https://catalog.colapl.org/uht
 
 if len(driver.find_elements_by_css_selector(".content_container.error")) > 0:
     print("There's an error with the login request. Please double-check your library # and PIN.")
+    driver.close()
     sys.exit()
 
 print("Login successful.")
